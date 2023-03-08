@@ -1,6 +1,6 @@
-export { default as Home } from "./Home";
-export { default as Product } from "./Product";
-export { default as Cart } from "./Cart";
-export { default as Checkout } from "./Checkout";
-export { default as Contact } from "./Contact";
-export { default as NotFound } from "./404";
+export { Home } from "./Home/index";
+export { Product } from "./Product/index";
+export { Cart } from "./Cart/index";
+export { Checkout } from "./Checkout/index";
+export { Contact } from "./Contact/index";
+export { NotFound } from "./404/index";
