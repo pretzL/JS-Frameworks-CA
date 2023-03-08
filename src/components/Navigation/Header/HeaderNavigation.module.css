@@ -1,4 +1,4 @@
-nav ul {
+.headerNav {
     display: flex;
     gap: 1rem;
 }

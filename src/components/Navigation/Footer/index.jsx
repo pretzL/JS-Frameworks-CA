@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import styles from "./Navigation.module.css";
+import styles from "./FooterNavigation.module.css";
 
 export const FooterNavigation = () => {
     return (
         <nav>
-            <ul>
+            <ul className={styles.footerNav}>
                 <li>
                     <Link to="/">Home</Link>
                 </li>

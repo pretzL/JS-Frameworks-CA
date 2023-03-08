@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import styles from "./Navigation.module.css";
+import styles from "./HeaderNavigation.module.css";
 
 export const HeaderNavigation = () => {
     return (
         <nav>
-            <ul>
+            <ul className={styles.headerNav}>
                 <li>
                     <span className="material-symbols-outlined">search</span>
                 </li>
