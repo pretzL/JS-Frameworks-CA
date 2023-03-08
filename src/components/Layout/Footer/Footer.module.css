@@ -1,0 +1,23 @@
+footer {
+    width: 100%;
+    display: flex;
+    padding: 2rem 5rem;
+    justify-content: space-around;
+    background-color: var(--primary);
+}
+
+.logo {
+    height: 75px;
+    width: 236px;
+}
+
+.footerText,
+.navigationContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footerText {
+    max-width: 800px;
+}

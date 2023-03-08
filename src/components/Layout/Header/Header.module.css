@@ -1,0 +1,11 @@
+header {
+    display: flex;
+    padding: 1rem 3rem;
+    justify-content: space-between;
+    background: var(--secondary);
+    color: white;
+}
+
+.logo {
+    height: 75px;
+}

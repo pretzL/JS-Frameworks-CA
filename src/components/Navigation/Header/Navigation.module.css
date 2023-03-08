@@ -1,0 +1,8 @@
+nav ul {
+    display: flex;
+    gap: 1rem;
+}
+
+span {
+    font-size: 28px;
+}
