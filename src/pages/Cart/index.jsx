@@ -1,3 +1,7 @@
 export const Cart = () => {
-    return <div>Cart</div>;
+    return (
+        <main>
+            <h2>Cart</h2>
+        </main>
+    );
 };

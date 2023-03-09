@@ -5,8 +5,10 @@ import logoColored from "../../../assets/logo/Color logo - no background.png";
 export const Header = () => {
     return (
         <header>
-            <img src={logoColored} alt="Bazaari logo" className={styles.logo} />
-            <HeaderNavigation />
+            <div className={styles.contentWrap}>
+                <img src={logoColored} alt="Bazaari logo" className={styles.logo} />
+                <HeaderNavigation />
+            </div>
         </header>
     );
 };

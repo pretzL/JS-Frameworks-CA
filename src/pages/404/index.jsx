@@ -1,3 +1,8 @@
 export const NotFound = () => {
-    return <div>404</div>;
+    return (
+        <main>
+            <h2>404</h2>
+            <p>That page doesn't exist!</p>
+        </main>
+    );
 };

@@ -1,3 +1,7 @@
 export const Product = () => {
-    return <div>Product</div>;
+    return (
+        <main>
+            <h2>Product</h2>
+        </main>
+    );
 };

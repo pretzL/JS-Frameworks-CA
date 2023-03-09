@@ -3,8 +3,8 @@ import styles from "./HeaderNavigation.module.css";
 
 export const HeaderNavigation = () => {
     return (
-        <nav>
-            <ul className={styles.headerNav}>
+        <nav className={styles.headerNav}>
+            <ul className={styles.headerUl}>
                 <li>
                     <span className="material-symbols-outlined">search</span>
                 </li>

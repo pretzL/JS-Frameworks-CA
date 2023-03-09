@@ -1,3 +1,7 @@
 export const Checkout = () => {
-    return <div>Checkout</div>;
+    return (
+        <main>
+            <h2>Checkout</h2>
+        </main>
+    );
 };

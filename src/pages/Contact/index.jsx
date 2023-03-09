@@ -1,3 +1,7 @@
 export const Contact = () => {
-    return <div>Contact</div>;
+    return (
+        <main>
+            <h2>Contact</h2>
+        </main>
+    );
 };
