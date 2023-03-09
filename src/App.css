@@ -31,11 +31,20 @@ li {
 body {
     min-height: 100vh;
     background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
 }
 
 main {
+    width: 100%;
     max-width: 1920px;
     margin: 0 auto;
+    flex: 1;
 }
 
 a {
