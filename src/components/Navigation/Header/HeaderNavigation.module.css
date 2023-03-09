@@ -12,3 +12,13 @@
 span {
     font-size: 28px;
 }
+
+span:hover {
+    cursor: pointer;
+}
+
+.searchLi {
+    display: flex;
+    position: relative;
+    align-items: center;
+}

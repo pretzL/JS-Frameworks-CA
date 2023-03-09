@@ -1,12 +1,22 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { SearchBar } from "../../Search";
 import styles from "./HeaderNavigation.module.css";
 
 export const HeaderNavigation = () => {
+    const [showSearchBar, setShowSearchBar] = useState(false);
+
+    function toggleSearchBar() {
+        setShowSearchBar(!showSearchBar);
+    }
     return (
         <nav className={styles.headerNav}>
             <ul className={styles.headerUl}>
-                <li>
-                    <span className="material-symbols-outlined">search</span>
+                <li className={styles.searchLi}>
+                    {showSearchBar && <SearchBar />}
+                    <span className="material-symbols-outlined" onClick={toggleSearchBar}>
+                        search
+                    </span>
                 </li>
                 <li>
                     <Link to="/">
