@@ -9,6 +9,15 @@
 
 .heroSmall {
     width: 100%;
+    height: 800px;
+    background: linear-gradient(to right, rgba(27, 27, 27, 1), rgba(27, 27, 27, 0), rgba(27, 27, 27, 1)), url("../../assets/images/foundation-with-dark-background.jpg");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heroSmallImage {
+    width: 40%;
 }
 
 .contentSection {
