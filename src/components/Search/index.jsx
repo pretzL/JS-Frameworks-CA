@@ -1,5 +1,5 @@
 import styles from "./Search.module.css";
 
 export const SearchBar = () => {
-    return <input type="search" placeholder="Search..." />;
+    return <input type="search" placeholder="Search..." className={styles.searchBar} />;
 };

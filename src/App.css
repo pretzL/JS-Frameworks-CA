@@ -3,6 +3,7 @@
     --primary: hsl(39, 35%, 56%);
     --secondary: hsl(0, 0%, 11%);
     --background: hsl(0, 0%, 76%);
+    --success: hsl(160 95% 25%);
 }
 
 html {
@@ -50,4 +51,38 @@ main {
 a {
     color: inherit;
     text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-size: 1.3rem;
+}
+
+/* Button re-set */
+button {
+    display: inline-block;
+    border: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    line-height: 1;
+    cursor: pointer;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.cta {
+    display: flex;
+    background-color: var(--primary);
+    box-shadow: 0 0 1em rgb(0 0 0 / 0.3);
+    height: 28px;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    padding: 0.5rem 1rem;
 }
