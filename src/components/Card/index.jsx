@@ -5,7 +5,9 @@ export const Card = ({ data }) => {
     console.log(data);
     return (
         <div className={styles.card}>
-            <img src={data.imageUrl} alt={data.title} className={styles.productImage} />
+            <Link to={`/product/${data.id}`}>
+                <img src={data.imageUrl} alt={data.title} className={styles.productImage} />
+            </Link>
             <h3 className={styles.productTitle}>{data.title}</h3>
             <p className={styles.productDescription}>{data.description}</p>
             <div className={styles.ctaContainer}>

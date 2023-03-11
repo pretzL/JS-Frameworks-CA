@@ -7,15 +7,9 @@
 
 .productImage {
     width: 250px;
-    height: 50%;
+    height: 100%;
     object-fit: cover;
     border-radius: 5px;
-}
-
-.productTitle {
-}
-
-.productDescription {
 }
 
 .ctaContainer {
@@ -26,4 +20,8 @@
 
 .ctaContainer span {
     color: var(--success);
+}
+
+a {
+    height: 50%;
 }
