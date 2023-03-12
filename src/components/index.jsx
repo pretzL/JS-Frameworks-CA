@@ -5,3 +5,4 @@ export { Hero } from "./Hero";
 export { SearchBar } from "./Search";
 export { Card } from "./Card";
 export { Comment } from "./Comment";
+export { SearchResult } from "./SearchResult";

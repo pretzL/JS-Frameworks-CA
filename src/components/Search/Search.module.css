@@ -1,7 +1,48 @@
-.searchBar {
-    border-radius: 15px;
-    height: 35px;
-    padding: 0.5rem 1rem;
+.searchForm {
     position: absolute;
     right: calc(100% + 1rem);
+    border-radius: 5px;
+    height: 35px;
+    display: flex;
+    background-color: #eee;
+    width: max-content;
+}
+
+.searchInput,
+.searchButton {
+    border: 0;
+    height: 100%;
+}
+
+.searchInput {
+    outline: 0;
+    width: 100%;
+    background-color: #eee;
+    padding: 0 1.5rem;
+    appearance: none;
+    transition: all 0.3s cubic-bezier(0, 0, 0.43, 1.49);
+    transition-property: width;
+    z-index: 1;
+    position: relative;
+    border-radius: 5px 0 0 5px;
+}
+
+.searchButton {
+    display: flex;
+    width: max-content;
+    background: var(--primary);
+    border-radius: 0 5px 5px 0;
+    color: black;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.searchResults {
+    position: absolute;
+    top: 35px;
+    width: max-content;
+    right: calc(100% + 1rem);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
