@@ -23,7 +23,7 @@ export const Product = () => {
                 <div className={`${styles.divider} ${styles.second}`}></div>
                 <div className={styles.ratingContainer}>
                     <div className={styles.rating}>
-                        <span class="material-symbols-outlined">star</span>
+                        <span className="material-symbols-outlined">star</span>
                         {data.rating}
                     </div>
                     <div className={styles.reviews}>{data && data.reviews ? data.reviews.length : 0} reviews</div>

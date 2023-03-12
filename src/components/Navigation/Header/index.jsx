@@ -9,11 +9,15 @@ export const HeaderNavigation = () => {
     function toggleSearchBar() {
         setShowSearchBar(!showSearchBar);
     }
+
+    const handleCloseSearchBar = () => {
+        setShowSearchBar(false);
+    };
     return (
         <nav className={styles.headerNav}>
             <ul className={styles.headerUl}>
                 <li className={styles.searchLi}>
-                    {showSearchBar && <SearchBar />}
+                    {showSearchBar && <SearchBar onClose={handleCloseSearchBar} />}
                     <span className="material-symbols-outlined" onClick={toggleSearchBar}>
                         search
                     </span>

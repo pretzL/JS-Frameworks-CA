@@ -5,7 +5,7 @@ export const Comment = ({ data }) => {
         <div className={styles.comment}>
             <div className={styles.commentHeader}>
                 <p className={styles.rating}>
-                    <span class="material-symbols-outlined">star</span> {data.rating}{" "}
+                    <span className="material-symbols-outlined">star</span> {data.rating}{" "}
                 </p>
                 <h4>{data.username}</h4>
             </div>
