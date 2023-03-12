@@ -12,6 +12,7 @@
 .searchButton {
     border: 0;
     height: 100%;
+    color: black;
 }
 
 .searchInput {
@@ -32,7 +33,6 @@
     width: max-content;
     background: var(--primary);
     border-radius: 0 5px 5px 0;
-    color: black;
     align-items: center;
     padding: 0.5rem;
 }
