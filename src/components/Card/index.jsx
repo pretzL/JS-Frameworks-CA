@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import styles from "./Card.module.css";
 
 export const Card = ({ data }) => {
-    console.log(data);
     return (
         <div className={styles.card}>
             <Link to={`/product/${data.id}`}>

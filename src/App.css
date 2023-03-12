@@ -85,4 +85,10 @@ button {
     align-items: center;
     color: black;
     padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.cta.large {
+    height: 50px;
+    width: 100%;
 }
