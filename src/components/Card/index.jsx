@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
+import { useCartStore } from "../../store";
 import styles from "./Card.module.css";
 
 export const Card = ({ data }) => {
+    const products = useCartStore((state) => state.products);
+    const addProduct = useCartStore((state) => state.addProduct);
+
     return (
         <div className={styles.card}>
             <Link to={`/product/${data.id}`}>
@@ -10,7 +14,9 @@ export const Card = ({ data }) => {
             <h3 className={styles.productTitle}>{data.title}</h3>
             <p className={styles.productDescription}>{data.description}</p>
             <div className={styles.ctaContainer}>
-                <span className="material-symbols-outlined">shopping_cart</span>
+                <span className="material-symbols-outlined" onClick={() => addProduct(data)}>
+                    shopping_cart
+                </span>
                 <Link to={`/product/${data.id}`}>
                     <button className="cta">Show more</button>
                 </Link>

@@ -92,4 +92,5 @@ button {
 .cta.large {
     height: 50px;
     width: 100%;
+    max-width: 300px;
 }
