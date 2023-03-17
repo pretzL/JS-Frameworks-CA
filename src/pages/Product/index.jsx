@@ -1,11 +1,13 @@
 import { useParams } from "react-router-dom";
 import { Comment } from "../../components";
 import { useFetch } from "../../hooks/useFetch";
+import { useCartStore } from "../../store";
 import styles from "./Product.module.css";
 
 export const Product = () => {
     let params = useParams();
     const { data, isLoading, isError } = useFetch(`https://api.noroff.dev/api/v1/online-shop/${params.id}`);
+    const addProduct = useCartStore((state) => state.addProduct);
 
     // Price handling
     const isDiscounted = data.price > data.discountedPrice;
@@ -36,7 +38,9 @@ export const Product = () => {
                             {isDiscounted && data.discountedPrice && `$ ${data.discountedPrice}`}
                         </div>
                     </div>
-                    <button className="cta large">Add to cart</button>
+                    <button className="cta large" onClick={() => addProduct(data)}>
+                        Add to cart
+                    </button>
                 </div>
                 <div>
                     <h3 className={styles.reviewsTitle}>Reviews</h3>
