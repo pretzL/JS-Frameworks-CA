@@ -6,7 +6,6 @@ import styles from "./Product.module.css";
 export const Product = () => {
     let params = useParams();
     const { data, isLoading, isError } = useFetch(`https://api.noroff.dev/api/v1/online-shop/${params.id}`);
-    console.log(data);
 
     // Price handling
     const isDiscounted = data.price > data.discountedPrice;

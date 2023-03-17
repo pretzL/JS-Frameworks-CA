@@ -3,9 +3,11 @@ import tshirts from "../../assets/images/tshirts.png";
 import { useCartStore } from "../../store";
 import { CartProduct } from "../../components/CartProduct";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Cart = () => {
     const products = useCartStore((state) => state.products);
+    const clearProducts = useCartStore((state) => state.clearProducts);
     const [totalPrice, setTotalPrice] = useState(0);
 
     useEffect(() => {
@@ -54,7 +56,9 @@ export const Cart = () => {
                 </div>
                 <div className={styles.cartFooter}>
                     <span className={styles.totalPrice}>$ {totalPrice.toFixed(2)}</span>
-                    <button className="cta large">Checkout</button>
+                    <Link to="/checkout" className="cta large" onClick={() => clearProducts()}>
+                        Checkout
+                    </Link>
                 </div>
             </section>
         </main>
