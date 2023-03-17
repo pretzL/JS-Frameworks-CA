@@ -15,8 +15,9 @@
 
 .itemImg {
     height: 100%;
+    aspect-ratio: 1 / 1;
     width: 30%;
-    object-fit: contain;
+    object-fit: cover;
     border-radius: 5px 0 0 5px;
 }
 
