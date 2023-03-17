@@ -4,9 +4,8 @@ import { useCartStore } from "../../store";
 import { Counter } from "../Counter";
 import styles from "./CartProduct.module.css";
 
-export const CartProduct = ({ data }) => {
+export const CartProduct = ({ data, onCountChange }) => {
     const products = useCartStore((state) => state.products);
-    const addProduct = useCartStore((state) => state.addProduct);
 
     // Price handling
     const isDiscounted = products.price > products.discountedPrice;
@@ -16,10 +15,10 @@ export const CartProduct = ({ data }) => {
 
     const [price, setPrice] = useState(Math.min(data.price, data.discountedPrice));
     const handleCountChange = (newCount) => {
-        console.log("Counter value:", newCount);
-        const updatedPrice = Math.min(data.price, data.discountedPrice) * newCount;
+        const updatedPrice = Math.min(data.price, data.discountedPrice) * Math.max(newCount, 0);
         setPrice(updatedPrice);
-        console.log(updatedPrice);
+
+        onCountChange(updatedPrice, Math.max(newCount, 0));
     };
 
     return (
@@ -31,8 +30,8 @@ export const CartProduct = ({ data }) => {
                 <h3 className={styles.productTitle}>{data.title}</h3>
                 <div className={styles.ctaContainer}>
                     <div className={styles.priceContainer}>
-                        {!isDiscounted && `$ ${price}`}
-                        <div className={priceClassNames}>{isDiscounted && `$ ${price}`}</div>
+                        {!isDiscounted && `$ ${price.toFixed(2)}`}
+                        <div className={priceClassNames}>{isDiscounted && `$ ${price.toFixed(2)}`}</div>
                         <div className={styles.discountPriceContainer}>
                             {isDiscounted && <div className={discountClassNames}>- {percentage}</div>}
                             {isDiscounted && data.discountedPrice && `$ ${price}`}

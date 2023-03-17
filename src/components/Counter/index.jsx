@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./Counter.module.css";
 
 export const Counter = ({ plusCount = 1, minusCount = 1, onCountChange }) => {
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(1);
 
     const handlePlus = () => {
         const newCount = count + plusCount;

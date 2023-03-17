@@ -33,6 +33,7 @@ span:hover {
     right: -1rem;
     font-size: 14px;
     background-color: var(--primary);
+    color: black;
     width: 22px;
     height: 22px;
     border-radius: 100%;

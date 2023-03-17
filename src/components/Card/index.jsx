@@ -3,7 +3,6 @@ import { useCartStore } from "../../store";
 import styles from "./Card.module.css";
 
 export const Card = ({ data }) => {
-    const products = useCartStore((state) => state.products);
     const addProduct = useCartStore((state) => state.addProduct);
 
     return (
