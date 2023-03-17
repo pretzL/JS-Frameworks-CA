@@ -1,6 +1,5 @@
 .card {
     background-color: #eee;
-    max-width: 600px;
     width: 100%;
     display: flex;
     gap: 1rem;
@@ -8,8 +7,13 @@
     box-shadow: 0 0 1em rgb(0 0 0 / 0.3);
 }
 
+.card a {
+    height: 100%;
+}
+
 .productImage {
-    width: 50%;
+    height: 100%;
+    aspect-ratio: 1 / 1;
     max-width: 200px;
     object-fit: cover;
     border-radius: 5px 0 0 5px;

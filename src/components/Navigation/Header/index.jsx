@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useCartStore } from "../../../store";
 import { SearchBar } from "../../Search";
 import styles from "./HeaderNavigation.module.css";
 
@@ -13,6 +14,8 @@ export const HeaderNavigation = () => {
     const handleCloseSearchBar = () => {
         setShowSearchBar(false);
     };
+
+    const products = useCartStore((state) => state.products);
     return (
         <nav className={styles.headerNav}>
             <ul className={styles.headerUl}>
@@ -29,7 +32,10 @@ export const HeaderNavigation = () => {
                 </li>
                 <li>
                     <Link to="/cart">
-                        <span className="material-symbols-outlined">shopping_cart</span>
+                        <div className={styles.cartWrapper}>
+                            <span className={styles.cartIndicator}>{products.length}</span>
+                            <span className="material-symbols-outlined">shopping_cart</span>
+                        </div>
                     </Link>
                 </li>
             </ul>

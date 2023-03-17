@@ -22,3 +22,21 @@ span:hover {
     position: relative;
     align-items: center;
 }
+
+.cartWrapper {
+    position: relative;
+}
+
+.cartIndicator {
+    position: absolute;
+    top: -1rem;
+    right: -1rem;
+    font-size: 14px;
+    background-color: var(--primary);
+    width: 22px;
+    height: 22px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -6,6 +6,7 @@
 }
 
 .productImage {
+    aspect-ratio: 1 / 1;
     width: 250px;
     height: 100%;
     object-fit: cover;
