@@ -11,8 +11,26 @@ header {
 
 .contentWrap {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
     width: 100%;
     max-width: 1920px;
     margin: 0 auto;
+}
+
+/* TABLET */
+@media (min-width: 768px) {
+    .contentWrap {
+        flex-direction: row;
+        align-items: normal;
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 992px) {
+}
+
+/* LARGE DESKTOP */
+@media (min-width: 1300px) {
 }

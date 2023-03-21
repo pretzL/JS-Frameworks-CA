@@ -33,6 +33,28 @@
 
 .productContainer {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    grid-template-columns: 1fr;
     gap: 1rem;
+}
+
+/* TABLET */
+@media (min-width: 768px) {
+    .productContainer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* DESKTOP */
+@media (min-width: 992px) {
+    .productContainer {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* LARGE DESKTOP */
+@media (min-width: 1300px) {
+    .productContainer {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
