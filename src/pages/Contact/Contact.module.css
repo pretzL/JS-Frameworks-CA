@@ -1,0 +1,56 @@
+.productPage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+}
+
+.productImageLarge {
+    height: 100%;
+    object-fit: cover;
+}
+
+.productInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem;
+    gap: 1rem;
+    width: 80%;
+}
+
+.productInfo h2 {
+    font-size: 1.8rem;
+}
+
+.divider {
+    height: 1px;
+    width: 40%;
+    background-color: var(--secondary);
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.contactForm input,
+.contactForm textarea {
+    border-radius: 5px;
+    height: 40px;
+    width: 100%;
+}
+
+.contactForm textarea {
+    resize: none;
+    height: 15vh;
+}
+
+.contactForm button {
+    margin-top: 2rem;
+    align-self: center;
+}
+
+.formError {
+    color: red;
+}

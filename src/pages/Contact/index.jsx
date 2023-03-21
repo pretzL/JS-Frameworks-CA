@@ -1,7 +1,81 @@
+import styles from "./Contact.module.css";
+import tshirts from "../../assets/images/tshirts.png";
+import { useForm } from "react-hook-form";
+import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
+
+const schema = yup
+    .object({
+        name: yup.string().min(3).max(50).required(),
+        email: yup.string().email().min(3).required(),
+        subject: yup.string().min(3).max(30).required(),
+        message: yup.string().min(3).max(200).required(),
+    })
+    .required();
+
 export const Contact = () => {
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm({
+        resolver: yupResolver(schema),
+    });
+
+    function onSubmit(data) {
+        console.log(data);
+    }
+
     return (
-        <main>
-            <h2>Contact</h2>
+        <main className={styles.productPage}>
+            <img src={tshirts} alt="T-shirts" className={styles.productImageLarge} />
+            <section className={styles.productInfo}>
+                <h2>Contact us</h2>
+                <div className={styles.divider}></div>
+                <form className={styles.contactForm} onSubmit={handleSubmit(onSubmit)}>
+                    <label htmlFor="name">Name</label>
+                    <input
+                        name="name"
+                        {...register("name", {
+                            required: true,
+                            minLength: 3,
+                            maxLength: 50,
+                        })}
+                    />
+                    <p className={styles.formError}>{errors.name?.message}</p>
+                    <label htmlFor="email">E-mail</label>
+                    <input
+                        name="email"
+                        {...register("email", {
+                            required: true,
+                        })}
+                    />
+                    <p className={styles.formError}>{errors.email?.message}</p>
+                    <label htmlFor="subject">Subject</label>
+                    <input
+                        name="subject"
+                        {...register("subject", {
+                            required: true,
+                            minLength: 3,
+                            maxLength: 30,
+                        })}
+                    />
+                    <p className={styles.formError}>{errors.subject?.message}</p>
+                    <label htmlFor="message">Message</label>
+                    <textarea
+                        name="message"
+                        {...register("message", {
+                            required: true,
+                            minLength: 10,
+                            maxLength: 200,
+                        })}
+                    />
+                    <p className={styles.formError}>{errors.message?.message}</p>
+                    <button type="submit" className="cta large">
+                        Submit
+                    </button>
+                </form>
+            </section>
         </main>
     );
 };
