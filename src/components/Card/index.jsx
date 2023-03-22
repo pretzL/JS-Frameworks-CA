@@ -5,13 +5,31 @@ import styles from "./Card.module.css";
 export const Card = ({ data }) => {
     const addProduct = useCartStore((state) => state.addProduct);
 
+    // Price handling
+    const isDiscounted = data.price > data.discountedPrice;
+    const priceClassNames = isDiscounted ? `${styles.price} ${styles.strikethrough}` : styles.price;
+    const discountClassNames = isDiscounted ? `${styles.discountedPrice}` : styles.discountedPrice;
+    const percentage = isDiscounted ? `${(((data.price - data.discountedPrice) / data.price) * 100).toFixed(0)}%` : null;
     return (
         <div className={styles.card}>
             <Link to={`/product/${data.id}`}>
                 <img src={data.imageUrl} alt={data.title} className={styles.productImage} />
             </Link>
             <h3 className={styles.productTitle}>{data.title}</h3>
-            <p className={styles.productDescription}>{data.description}</p>
+            <div className={styles.ratingContainer}>
+                <div className={styles.rating}>
+                    <span className="material-symbols-outlined">star</span>
+                    {data.rating}
+                </div>
+                <div className={styles.priceContainer}>
+                    {!isDiscounted && `$ ${data.price}`}
+                    <div className={priceClassNames}>{isDiscounted && `$ ${data.price}`}</div>
+                    <div className={styles.discountPriceContainer}>
+                        {isDiscounted && <div className={discountClassNames}>- {percentage}</div>}
+                        {isDiscounted && data.discountedPrice && `$ ${data.discountedPrice}`}
+                    </div>
+                </div>
+            </div>
             <div className={styles.ctaContainer}>
                 <span className="material-symbols-outlined" onClick={() => addProduct(data)}>
                     shopping_cart
