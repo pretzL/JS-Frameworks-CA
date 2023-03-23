@@ -28,17 +28,14 @@ export const Cart = () => {
         if (productIndex !== -1) {
             if (newCount === 0) {
                 // Remove the product from the cart if the count is 0
-                const updatedProducts = products.filter((product) => product.id !== productId);
-                useCartStore.setState({ products: updatedProducts });
+                useCartStore.getState().deleteProduct(productId);
             } else {
                 // Update the product count
                 const updatedProduct = {
                     ...products[productIndex],
                     count: newCount,
                 };
-                const updatedProducts = [...products];
-                updatedProducts[productIndex] = updatedProduct;
-                useCartStore.setState({ products: updatedProducts });
+                useCartStore.getState().updateProduct(updatedProduct);
             }
         }
         calculateTotalPrice();
@@ -55,7 +52,7 @@ export const Cart = () => {
                     ))}
                 </div>
                 <div className={styles.cartFooter}>
-                    <span className={styles.totalPrice}>$ {totalPrice.toFixed(2)}</span>
+                    <span className={styles.totalPrice}>NOK {totalPrice.toFixed(2)}</span>
                     <Link to="/checkout" className="cta large" onClick={() => clearProducts()}>
                         Checkout
                     </Link>

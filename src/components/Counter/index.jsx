@@ -1,8 +1,8 @@
 import { useState } from "react";
 import styles from "./Counter.module.css";
 
-export const Counter = ({ plusCount = 1, minusCount = 1, onCountChange }) => {
-    const [count, setCount] = useState(1);
+export const Counter = ({ plusCount = 1, minusCount = 1, onCountChange, cartItem }) => {
+    const [count, setCount] = useState(cartItem.count);
 
     const handlePlus = () => {
         const newCount = count + plusCount;

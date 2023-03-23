@@ -4,6 +4,7 @@ import styles from "./Home.module.css";
 
 export const Home = () => {
     const { data, isLoading, isError } = useFetch("https://api.noroff.dev/api/v1/online-shop");
+
     return (
         <main>
             <Hero />

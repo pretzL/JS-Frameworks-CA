@@ -13,7 +13,16 @@ export const useCartStore = create((set, get) => ({
     products: loadProductsFromLocalStorage(),
 
     addProduct: (product) => {
-        const updatedProducts = [...get().products, product];
+        const updatedProducts = [...get().products, { ...product, count: 1 }];
+        saveProductsToLocalStorage(updatedProducts);
+        set({ products: updatedProducts });
+    },
+
+    updateProduct: (updatedProduct) => {
+        const products = get().products;
+        const productIndex = products.findIndex((product) => product.id === updatedProduct.id);
+        const updatedProducts = [...products];
+        updatedProducts[productIndex] = updatedProduct;
         saveProductsToLocalStorage(updatedProducts);
         set({ products: updatedProducts });
     },

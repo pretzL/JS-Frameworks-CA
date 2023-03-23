@@ -32,7 +32,7 @@ export const HeaderNavigation = () => {
                 </li>
                 <li>
                     <Link to="/contact">
-                        <span class="material-symbols-outlined">contact_support</span>
+                        <span className="material-symbols-outlined">contact_support</span>
                     </Link>
                 </li>
                 <li>

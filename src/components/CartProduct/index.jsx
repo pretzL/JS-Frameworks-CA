@@ -30,14 +30,14 @@ export const CartProduct = ({ data, onCountChange }) => {
                 <h3 className={styles.productTitle}>{data.title}</h3>
                 <div className={styles.ctaContainer}>
                     <div className={styles.priceContainer}>
-                        {!isDiscounted && `$ ${price.toFixed(2)}`}
-                        <div className={priceClassNames}>{isDiscounted && `$ ${price.toFixed(2)}`}</div>
+                        {!isDiscounted && `NOK ${price.toFixed(2)}`}
+                        <div className={priceClassNames}>{isDiscounted && `NOK ${price.toFixed(2)}`}</div>
                         <div className={styles.discountPriceContainer}>
                             {isDiscounted && <div className={discountClassNames}>- {percentage}</div>}
-                            {isDiscounted && data.discountedPrice && `$ ${price}`}
+                            {isDiscounted && data.discountedPrice && `NOK ${price}`}
                         </div>
                     </div>
-                    <Counter plusCount={1} minusCount={1} onCountChange={handleCountChange} />
+                    <Counter plusCount={1} minusCount={1} onCountChange={handleCountChange} cartItem={data} />
                 </div>
             </div>
         </div>
