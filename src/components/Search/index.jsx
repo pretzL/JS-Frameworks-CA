@@ -17,8 +17,13 @@ export const SearchBar = ({ onClose }) => {
     const handleChange = (evt) => {
         const term = evt.target.value;
         setSearchTerm(term);
-        const results = search(data, term);
-        setSearchResults([...results]);
+
+        if (term === "") {
+            setSearchResults([]);
+        } else {
+            const results = search(data, term);
+            setSearchResults([...results]);
+        }
     };
 
     const handleClick = () => {
@@ -28,7 +33,17 @@ export const SearchBar = ({ onClose }) => {
     return (
         <>
             <form role="search" className={styles.searchForm} onSubmit={handleSearch}>
-                <input id="search" type="search" placeholder="Search..." autoFocus required className={styles.searchInput} value={searchTerm} onChange={handleChange} />
+                <input
+                    id="search"
+                    type="search"
+                    placeholder="Search..."
+                    autoFocus
+                    required
+                    className={styles.searchInput}
+                    value={searchTerm}
+                    onChange={handleChange}
+                    autocomplete="off"
+                />
                 <button type="submit" className={styles.searchButton}>
                     Go
                 </button>
