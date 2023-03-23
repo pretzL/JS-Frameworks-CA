@@ -1,12 +1,14 @@
 .headerNav {
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 .headerUl {
     display: flex;
     align-items: center;
-    gap: 5rem;
+    justify-content: space-around;
+    width: 100%;
 }
 
 span {
@@ -40,4 +42,15 @@ span:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* DESKTOP */
+@media (min-width: 992px) {
+    .headerNav,
+    .headerUl {
+        width: auto;
+    }
+    .headerUl {
+        gap: 5rem;
+    }
 }
