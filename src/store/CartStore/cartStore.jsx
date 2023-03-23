@@ -13,16 +13,24 @@ export const useCartStore = create((set, get) => ({
     products: loadProductsFromLocalStorage(),
 
     addProduct: (product) => {
-        const updatedProducts = [...get().products, { ...product, count: 1 }];
-        saveProductsToLocalStorage(updatedProducts);
-        set({ products: updatedProducts });
-    },
-
-    updateProduct: (updatedProduct) => {
         const products = get().products;
-        const productIndex = products.findIndex((product) => product.id === updatedProduct.id);
-        const updatedProducts = [...products];
-        updatedProducts[productIndex] = updatedProduct;
+        const productIndex = products.findIndex((p) => p.id === product.id);
+
+        let updatedProducts;
+
+        if (productIndex !== -1) {
+            // Update the count if the product is already in the store
+            const updatedProduct = {
+                ...products[productIndex],
+                count: products[productIndex].count + 1,
+            };
+            updatedProducts = [...products];
+            updatedProducts[productIndex] = updatedProduct;
+        } else {
+            // Add the product if it's not in the store
+            updatedProducts = [...products, { ...product, count: 1 }];
+        }
+
         saveProductsToLocalStorage(updatedProducts);
         set({ products: updatedProducts });
     },
