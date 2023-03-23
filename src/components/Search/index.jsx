@@ -42,7 +42,7 @@ export const SearchBar = ({ onClose }) => {
                     className={styles.searchInput}
                     value={searchTerm}
                     onChange={handleChange}
-                    autocomplete="off"
+                    autoComplete="off"
                 />
                 <button type="submit" className={styles.searchButton}>
                     Go
