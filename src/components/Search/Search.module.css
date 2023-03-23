@@ -1,6 +1,7 @@
 .searchForm {
-    position: absolute;
-    top: 3rem;
+    position: fixed;
+    top: 9rem;
+    left: 50%;
     border-radius: 5px;
     height: 35px;
     display: flex;
@@ -40,29 +41,36 @@
 .searchResults {
     position: absolute;
     top: 6rem;
-    left: -2rem;
+    left: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
 
+.searchForm,
+.searchResults {
+    transform: translateX(-50%);
+}
+
 /* TABLET */
 @media (min-width: 768px) {
+    .searchForm,
+    .searchResults {
+        position: absolute;
+        top: 3rem;
+        right: calc(100% + 1rem);
+        transform: translateX(0);
+    }
+
+    .searchResults {
+        left: 0;
+        top: 6rem;
+    }
 }
 
 /* DESKTOP */
 @media (min-width: 992px) {
-    .searchForm,
-    .searchResults {
-        top: 0;
-        right: calc(100% + 1rem);
-    }
-
-    .searchResults {
-        left: auto;
-        top: 3rem;
-    }
 }
 
 /* LARGE DESKTOP */
