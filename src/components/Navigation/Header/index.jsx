@@ -31,6 +31,11 @@ export const HeaderNavigation = () => {
                     </Link>
                 </li>
                 <li>
+                    <Link to="/contact">
+                        <span class="material-symbols-outlined">contact_support</span>
+                    </Link>
+                </li>
+                <li>
                     <Link to="/cart">
                         <div className={styles.cartWrapper}>
                             <span className={styles.cartIndicator}>{products.length}</span>

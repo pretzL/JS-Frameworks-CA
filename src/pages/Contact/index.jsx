@@ -6,10 +6,10 @@ import * as yup from "yup";
 
 const schema = yup
     .object({
-        name: yup.string().min(3).max(50).required(),
-        email: yup.string().email().min(3).required(),
-        subject: yup.string().min(3).max(30).required(),
-        message: yup.string().min(3).max(200).required(),
+        name: yup.string().trim().min(3).max(50).required(),
+        email: yup.string().trim().email().min(3).required(),
+        subject: yup.string().trim().min(3).max(30).required(),
+        message: yup.string().trim().min(3).max(200).required(),
     })
     .required();
 
