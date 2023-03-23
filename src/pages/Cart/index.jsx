@@ -47,9 +47,18 @@ export const Cart = () => {
             <section className={styles.productInfo}>
                 <h2>Cart</h2>
                 <div className={styles.cartList}>
-                    {products.map((product) => (
-                        <CartProduct data={product} key={product.id} onCountChange={(updatedPrice, newCount) => handleCountChange(updatedPrice, newCount, product.id)} />
-                    ))}
+                    {products.length === 0 ? (
+                        <>
+                            <p>Your cart is empty.</p>
+                            <Link to="/" className={`cta large ${styles.checkoutBack}`}>
+                                Back to shopping
+                            </Link>
+                        </>
+                    ) : (
+                        products.map((product) => (
+                            <CartProduct data={product} key={product.id} onCountChange={(updatedPrice, newCount) => handleCountChange(updatedPrice, newCount, product.id)} />
+                        ))
+                    )}
                 </div>
                 <div className={styles.cartFooter}>
                     <span className={styles.totalPrice}>NOK {totalPrice.toFixed(2)}</span>
