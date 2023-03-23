@@ -31,11 +31,11 @@ export const Card = ({ data }) => {
                     {data.rating}
                 </div>
                 <div className={styles.priceContainer}>
-                    {!isDiscounted && `$ ${data.price}`}
-                    <div className={priceClassNames}>{isDiscounted && `$ ${data.price}`}</div>
+                    {!isDiscounted && `NOK ${data.price}`}
+                    <div className={priceClassNames}>{isDiscounted && `NOK ${data.price}`}</div>
                     <div className={styles.discountPriceContainer}>
                         {isDiscounted && <div className={discountClassNames}>- {percentage}</div>}
-                        {isDiscounted && data.discountedPrice && `$ ${data.discountedPrice}`}
+                        {isDiscounted && data.discountedPrice && `NOK ${data.discountedPrice}`}
                     </div>
                 </div>
             </div>
