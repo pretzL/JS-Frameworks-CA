@@ -74,7 +74,7 @@
 
 .reviewsContainer {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 1rem;
 }
 
@@ -84,6 +84,9 @@
 
 /* TABLET */
 @media (min-width: 768px) {
+    .reviewsContainer {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 /* DESKTOP */
