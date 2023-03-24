@@ -38,7 +38,7 @@ export const HeaderNavigation = () => {
                 <li>
                     <Link to="/cart">
                         <div className={styles.cartWrapper}>
-                            <span className={styles.cartIndicator}>{products.length}</span>
+                            <span className={styles.cartIndicator}>{products.reduce((total, product) => total + product.count, 0)}</span>
                             <span className="material-symbols-outlined">shopping_cart</span>
                         </div>
                     </Link>
