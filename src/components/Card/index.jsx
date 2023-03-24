@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCartStore } from "../../store";
-import { ScreenLabel } from "../ScreenLabel/ScreenLabel";
+import { ScreenLabel } from "../ScreenLabel";
 import styles from "./Card.module.css";
 
 export const Card = ({ data }) => {

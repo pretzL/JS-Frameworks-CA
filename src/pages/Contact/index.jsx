@@ -3,6 +3,8 @@ import tshirts from "../../assets/images/tshirts.png";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import { ScreenLabel } from "../../components/ScreenLabel";
+import { useState } from "react";
 
 const schema = yup
     .object({
@@ -18,18 +20,28 @@ export const Contact = () => {
         register,
         handleSubmit,
         formState: { errors },
+        reset,
     } = useForm({
         resolver: yupResolver(schema),
     });
 
     function onSubmit(data) {
         console.log(data);
+        setShowLabel(true);
+        reset();
     }
+
+    const [showLabel, setShowLabel] = useState(false);
+
+    const handleUnmount = () => {
+        setShowLabel(false);
+    };
 
     return (
         <main className={styles.productPage}>
             <img src={tshirts} alt="T-shirts" className={styles.productImageLarge} />
             <section className={styles.productInfo}>
+                {showLabel && <ScreenLabel message={`Form submitted`} onUnmount={handleUnmount} />}
                 <h2>Contact us</h2>
                 <div className={styles.divider}></div>
                 <form className={styles.contactForm} onSubmit={handleSubmit(onSubmit)}>
