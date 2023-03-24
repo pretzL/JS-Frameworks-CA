@@ -31,11 +31,7 @@ export const Cart = () => {
                 useCartStore.getState().deleteProduct(productId);
             } else {
                 // Update the product count
-                const updatedProduct = {
-                    ...products[productIndex],
-                    count: newCount,
-                };
-                useCartStore.getState().updateProduct(updatedProduct);
+                useCartStore.getState().updateProductCount(productId, newCount);
             }
         }
         calculateTotalPrice();

@@ -1,4 +1,4 @@
-import create from "zustand";
+import { create } from "zustand";
 
 const saveProductsToLocalStorage = (products) => {
     localStorage.setItem("products", JSON.stringify(products));
@@ -44,6 +44,17 @@ export const useCartStore = create((set, get) => ({
     clearProducts: () => {
         localStorage.removeItem("products");
         set({ products: [] });
+    },
+
+    updateProductCount: (productId, count) => {
+        const updatedProducts = get().products.map((product) => {
+            if (product.id === productId) {
+                return { ...product, count };
+            }
+            return product;
+        });
+        saveProductsToLocalStorage(updatedProducts);
+        set({ products: updatedProducts });
     },
 
     getProducts: () => get().products,
