@@ -4,6 +4,7 @@ import { useCartStore } from "../../store";
 import { CartProduct, ScreenLabel } from "../../components";
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 export const Cart = () => {
     const products = useCartStore((state) => state.products);
@@ -56,6 +57,9 @@ export const Cart = () => {
 
     return (
         <main className={styles.productPage}>
+            <Helmet>
+                <title>Cart | Bazaari</title>
+            </Helmet>
             {showLabel && <ScreenLabel message={"You have no items in your cart to check out!"} onUnmount={handleUnmount} />}
             <img src={tshirts} alt="T-shirts" className={styles.productImageLarge} />
             <section className={styles.productInfo}>

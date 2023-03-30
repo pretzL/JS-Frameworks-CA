@@ -5,6 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { ScreenLabel } from "../../components";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 
 const schema = yup
     .object({
@@ -39,6 +40,9 @@ export const Contact = () => {
 
     return (
         <main className={styles.productPage}>
+            <Helmet>
+                <title>Contact | Bazaari</title>
+            </Helmet>
             <img src={tshirts} alt="T-shirts" className={styles.productImageLarge} />
             <section className={styles.productInfo}>
                 {showLabel && <ScreenLabel message={`Form submitted`} onUnmount={handleUnmount} />}

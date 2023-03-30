@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { Card, Hero, Loader } from "../../components";
 import { useFetch } from "../../hooks/useFetch";
 import styles from "./Home.module.css";
@@ -16,6 +17,9 @@ export const Home = () => {
 
     return (
         <main>
+            <Helmet>
+                <title>Home | Bazaari</title>
+            </Helmet>
             <Hero />
             <div className={styles.divider}>Some kind of slogan here.</div>
             <div className={styles.heroSmall}></div>

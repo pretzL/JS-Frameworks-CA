@@ -1,10 +1,14 @@
 import styles from "./Checkout.module.css";
 import tshirts from "../../assets/images/tshirts.png";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 export const Checkout = () => {
     return (
         <main className={styles.productPage}>
+            <Helmet>
+                <title>Checkout | Bazaari</title>
+            </Helmet>
             <img src={tshirts} alt="T-shirts" className={styles.productImageLarge} />
             <section className={styles.productInfo}>
                 <h2>Checkout successful!</h2>

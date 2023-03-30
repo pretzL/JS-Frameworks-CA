@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 import { Loader, ScreenLabel, Comment } from "../../components";
 import { useFetch } from "../../hooks/useFetch";
@@ -71,6 +72,9 @@ export const Product = () => {
     }
     return (
         <main className={styles.productPage}>
+            <Helmet>
+                <title>{`${data.title} | Bazaari`}</title>
+            </Helmet>
             {showLabel && <ScreenLabel message={`${data.title} added to cart!`} onUnmount={handleUnmount} />}
             <img src={data.imageUrl} alt={data.title} className={styles.productImageLarge} />
             <section className={styles.productInfo}>{content}</section>
