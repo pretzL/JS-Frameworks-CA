@@ -1,4 +1,4 @@
-import { Card, Hero } from "../../components";
+import { Card, Hero, Loader } from "../../components";
 import { useFetch } from "../../hooks/useFetch";
 import styles from "./Home.module.css";
 
@@ -9,7 +9,7 @@ export const Home = () => {
     if (isError) {
         content = <div className="error">There was an error loading the data.</div>;
     } else if (isLoading) {
-        content = <div>Loading...</div>;
+        content = <Loader />;
     } else {
         content = data.map((item) => <Card data={item} key={item.id} />);
     }
@@ -20,7 +20,7 @@ export const Home = () => {
             <div className={styles.divider}>Some kind of slogan here.</div>
             <div className={styles.heroSmall}></div>
             <section className={styles.contentSection}>
-                <h2>Highest Rated</h2>
+                <h2>Products</h2>
                 <div className={styles.productContainer}>{content}</div>
             </section>
         </main>

@@ -1,6 +1,6 @@
 header {
     display: flex;
-    padding: 1rem 3rem;
+    padding: var(--spacing-4) 3rem;
     background: var(--secondary);
     color: white;
 }
@@ -25,12 +25,4 @@ header {
         flex-direction: row;
         align-items: normal;
     }
-}
-
-/* DESKTOP */
-@media (min-width: 992px) {
-}
-
-/* LARGE DESKTOP */
-@media (min-width: 1300px) {
 }

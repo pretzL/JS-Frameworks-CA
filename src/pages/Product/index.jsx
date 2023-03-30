@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { Comment } from "../../components";
+import { Loader, ScreenLabel, Comment } from "../../components";
 import { useFetch } from "../../hooks/useFetch";
 import { useCartStore } from "../../store";
 import styles from "./Product.module.css";
@@ -9,15 +10,26 @@ export const Product = () => {
     const { data, isLoading, isError } = useFetch(`https://api.noroff.dev/api/v1/online-shop/${params.id}`);
     const addProduct = useCartStore((state) => state.addProduct);
 
+    const [showLabel, setShowLabel] = useState(false);
+
+    const handleUnmount = () => {
+        setShowLabel(false);
+    };
+
     // Price handling
     const isDiscounted = data.price > data.discountedPrice;
     const priceClassNames = isDiscounted ? `${styles.price} ${styles.strikethrough}` : styles.price;
     const discountClassNames = isDiscounted ? `${styles.discountedPrice}` : styles.discountedPrice;
     const percentage = isDiscounted ? `${(((data.price - data.discountedPrice) / data.price) * 100).toFixed(0)}%` : null;
-    return (
-        <main className={styles.productPage}>
-            <img src={data.imageUrl} alt={data.title} className={styles.productImageLarge} />
-            <section className={styles.productInfo}>
+
+    let content;
+    if (isError) {
+        content = <div className="error">There was an error loading the data.</div>;
+    } else if (isLoading) {
+        content = <Loader />;
+    } else {
+        content = (
+            <>
                 <h2>{data.title}</h2>
                 <div className={styles.divider}></div>
                 <p>{data.description}</p>
@@ -38,7 +50,13 @@ export const Product = () => {
                             {isDiscounted && data.discountedPrice && `NOK ${data.discountedPrice}`}
                         </div>
                     </div>
-                    <button className="cta large" onClick={() => addProduct(data)}>
+                    <button
+                        className="cta large"
+                        onClick={() => {
+                            setShowLabel(true);
+                            addProduct(data);
+                        }}
+                    >
                         Add to cart
                     </button>
                 </div>
@@ -48,7 +66,14 @@ export const Product = () => {
                         {data.reviews && data.reviews.length > 0 ? data.reviews.map((item) => <Comment data={item} key={item.id} />) : <p>No reviews</p>}
                     </div>
                 </div>
-            </section>
+            </>
+        );
+    }
+    return (
+        <main className={styles.productPage}>
+            {showLabel && <ScreenLabel message={`${data.title} added to cart!`} onUnmount={handleUnmount} />}
+            <img src={data.imageUrl} alt={data.title} className={styles.productImageLarge} />
+            <section className={styles.productInfo}>{content}</section>
         </main>
     );
 };

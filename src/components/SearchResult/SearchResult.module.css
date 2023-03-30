@@ -5,12 +5,12 @@
     align-items: center;
     border-radius: 5px;
     width: 300px;
-    gap: 1rem;
+    gap: var(--spacing-4);
     color: black;
 }
 
-.item > * {
-    font-size: 1rem;
+.item > h4 {
+    font-size: var(--spacing-4);
 }
 
 .itemImg {
@@ -23,5 +23,5 @@
 
 .itemPrice {
     margin-left: auto;
-    padding: 1rem 1rem 1rem 0;
+    padding: var(--spacing-4) var(--spacing-4) var(--spacing-4) 0;
 }

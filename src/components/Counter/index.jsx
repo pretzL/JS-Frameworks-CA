@@ -18,12 +18,12 @@ export const Counter = ({ plusCount = 1, minusCount = 1, onCountChange, cartItem
 
     return (
         <div className={styles.counter}>
-            <button className={`${styles.button} ${styles.buttonPlus}`} onClick={handlePlus}>
-                +
-            </button>
-            <span className={styles.count}>{count}</span>
             <button className={`${styles.button} ${styles.buttonMinus}`} onClick={handleMinus}>
                 -
+            </button>
+            <span className={styles.count}>{count}</span>
+            <button className={`${styles.button} ${styles.buttonPlus}`} onClick={handlePlus}>
+                +
             </button>
         </div>
     );

@@ -16,7 +16,7 @@
     flex-direction: column;
     justify-content: center;
     padding: 4rem;
-    gap: 1rem;
+    gap: var(--spacing-4);
     width: 100%;
     margin: 0 auto;
 }
@@ -34,14 +34,20 @@
 .contactForm {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: var(--spacing-2);
 }
 
 .contactForm input,
 .contactForm textarea {
+    border: none;
     border-radius: 5px;
     height: 40px;
     width: 100%;
+}
+
+.contactForm input:focus,
+.contactForm textarea:focus {
+    outline: none;
 }
 
 .contactForm textarea {
@@ -50,16 +56,12 @@
 }
 
 .contactForm button {
-    margin-top: 2rem;
+    margin-top: var(--spacing-8);
     align-self: center;
 }
 
 .formError {
     color: red;
-}
-
-/* TABLET */
-@media (min-width: 768px) {
 }
 
 /* DESKTOP */

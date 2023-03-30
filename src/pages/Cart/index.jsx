@@ -1,14 +1,15 @@
 import styles from "./Cart.module.css";
 import tshirts from "../../assets/images/tshirts.png";
 import { useCartStore } from "../../store";
-import { CartProduct } from "../../components/CartProduct";
+import { CartProduct, ScreenLabel } from "../../components";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Cart = () => {
     const products = useCartStore((state) => state.products);
     const clearProducts = useCartStore((state) => state.clearProducts);
     const [totalPrice, setTotalPrice] = useState(0);
+    const navigate = useNavigate();
 
     useEffect(() => {
         calculateTotalPrice();
@@ -37,8 +38,25 @@ export const Cart = () => {
         calculateTotalPrice();
     };
 
+    const [showLabel, setShowLabel] = useState(false);
+
+    const handleUnmount = () => {
+        setShowLabel(false);
+    };
+
+    const handleCheckout = (e) => {
+        e.preventDefault();
+        if (products.length === 0) {
+            setShowLabel(true);
+        } else {
+            clearProducts();
+            navigate("/checkout");
+        }
+    };
+
     return (
         <main className={styles.productPage}>
+            {showLabel && <ScreenLabel message={"You have no items in your cart to check out!"} onUnmount={handleUnmount} />}
             <img src={tshirts} alt="T-shirts" className={styles.productImageLarge} />
             <section className={styles.productInfo}>
                 <h2>Cart</h2>
@@ -58,7 +76,7 @@ export const Cart = () => {
                 </div>
                 <div className={styles.cartFooter}>
                     <span className={styles.totalPrice}>NOK {totalPrice.toFixed(2)}</span>
-                    <Link to="/checkout" className="cta large" onClick={() => clearProducts()}>
+                    <Link to="/checkout" className="cta large" onClick={handleCheckout}>
                         Checkout
                     </Link>
                 </div>

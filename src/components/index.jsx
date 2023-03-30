@@ -6,3 +6,6 @@ export { SearchBar } from "./Search";
 export { Card } from "./Card";
 export { Comment } from "./Comment";
 export { SearchResult } from "./SearchResult";
+export { CartProduct } from "./CartProduct";
+export { ScreenLabel } from "./ScreenLabel";
+export { Loader } from "./Loader";
