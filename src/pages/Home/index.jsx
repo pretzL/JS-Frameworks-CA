@@ -21,7 +21,7 @@ export const Home = () => {
                 <title>Home | Bazaari</title>
             </Helmet>
             <Hero />
-            <div className={styles.divider}>Some kind of slogan here.</div>
+            <div className={styles.divider}>Shop till you drop, from the comfort of your couch!</div>
             <div className={styles.heroSmall}></div>
             <section className={styles.contentSection}>
                 <h2>Products</h2>
