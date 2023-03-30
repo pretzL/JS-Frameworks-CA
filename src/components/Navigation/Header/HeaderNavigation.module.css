@@ -1,0 +1,62 @@
+.headerNav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.headerUl {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+span {
+    font-size: 28px;
+}
+
+span:hover {
+    cursor: pointer;
+}
+
+.searchLi {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.cartWrapper {
+    position: relative;
+}
+
+.cartIndicator {
+    position: absolute;
+    top: var(--spacing-4);
+    right: var(--spacing-4);
+    font-size: 14px;
+    background-color: var(--primary);
+    color: black;
+    width: 22px;
+    height: 22px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.liActive {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: var(--spacing-1);
+    border-radius: 100%;
+}
+
+/* DESKTOP */
+@media (min-width: 992px) {
+    .headerNav,
+    .headerUl {
+        width: auto;
+    }
+    .headerUl {
+        gap: 5rem;
+    }
+}

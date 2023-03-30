@@ -1,0 +1,6 @@
+.heroImg {
+    background-image: linear-gradient(180deg, rgba(27, 27, 27, 1) 1%, rgba(24, 24, 24, 0) 30%), url("../../assets/images/ecommerce_hero_section-products-left_1440-550.jpg");
+    width: 100%;
+    height: 650px;
+    background-size: cover;
+}

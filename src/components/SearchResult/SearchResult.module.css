@@ -1,0 +1,27 @@
+.item {
+    background-color: #eee;
+    box-shadow: 0 0 1em rgb(0 0 0 / 0.3);
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    width: 300px;
+    gap: var(--spacing-4);
+    color: black;
+}
+
+.item > h4 {
+    font-size: var(--spacing-4);
+}
+
+.itemImg {
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    width: 30%;
+    object-fit: cover;
+    border-radius: 5px 0 0 5px;
+}
+
+.itemPrice {
+    margin-left: auto;
+    padding: var(--spacing-4) var(--spacing-4) var(--spacing-4) 0;
+}

@@ -1,0 +1,134 @@
+:root {
+    font-size: 16px;
+    --primary: hsl(39, 35%, 56%);
+    --secondary: hsl(0, 0%, 11%);
+    --background: hsl(0, 0%, 76%);
+    --success: hsl(160 95% 25%);
+    --error: hsl(0, 100%, 40%);
+    --error-lt: hsl(0, 100%, 70%);
+    --spacing-1: 0.25rem;
+    --spacing-2: 0.5rem;
+    --spacing-3: 0.75rem;
+    --spacing-4: 1rem;
+    --spacing-5: 1.25rem;
+    --spacing-6: 1.5rem;
+    --spacing-7: 1.75rem;
+    --spacing-8: 2rem;
+    --col-min-width: 250px;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: "Roboto", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+ul,
+li {
+    text-decoration: none;
+    list-style-type: none;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    flex: 1;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-size: 1.3rem;
+}
+
+/* Button re-set */
+button {
+    display: inline-block;
+    border: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    line-height: 1;
+    cursor: pointer;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.cta {
+    display: flex;
+    background-color: var(--primary);
+    box-shadow: 0 0 1em rgb(0 0 0 / 0.3);
+    height: 28px;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    padding: var(--spacing-2) var(--spacing-4);
+    border-radius: 5px;
+}
+
+.cta.large {
+    height: 50px;
+    width: 100%;
+    max-width: 200px;
+}
+
+.cta:hover {
+    background-color: var(--secondary);
+    color: white;
+    transition: all 0.2s ease-in-out;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.error {
+    width: 80%;
+    height: 100px;
+    background-color: var(--error-lt);
+    border-radius: 5px;
+    padding: var(--spacing-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: var(--spacing-4);
+    color: var(--error);
+    border: 1px solid var(--error);
+}
+
+.noclick:hover {
+    cursor: default;
+}
