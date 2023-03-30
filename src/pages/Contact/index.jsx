@@ -3,7 +3,7 @@ import tshirts from "../../assets/images/tshirts.png";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { ScreenLabel } from "../../components/ScreenLabel";
+import { ScreenLabel } from "../../components";
 import { useState } from "react";
 
 const schema = yup
