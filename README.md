@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# Bazaari
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Bazaari image](https://github.com/pretzL/JS-Frameworks-CA/assets/30121693/ea16f824-f6ae-4984-9092-341c42d49cd8)
 
-## Available Scripts
 
-In the project directory, you can run:
+[Bazaari](https://bazaari.netlify.app/) is an e-commerce site created using React and the Noroff E-Commerce API.
 
-### `npm start`
+## Description
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Bazaari is an online e-commerce website created using React and the Noroff E-Commerce API as my Course Assignment for the JavaScript Frameworks course at Noroff.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The main features are:
 
-### `npm test`
+- Built with React
+- Fully responsive
+- Noroff E-Commerce API
+- Lookahead search bar
+- Fully functioning cart system
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Built With
 
-### `npm run build`
+- React
+- CSS Modules
+- Noroff E-Commerce API
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This project is already fully deployed, so there is no extra work required. Should you still want to deploy it yourself, follow the below steps.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installing
 
-### `npm run eject`
+First off, clone the repo.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Clone the repo:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+gh repo clone pretzL/JS-Frameworks-CA
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Upload and install to your preferred hosting provider.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This is usually done through the hosting's own file manager or via FTP. Check which one you should use through your hosting provider.
 
-## Learn More
+### Running
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Use npm commands
+```bash
+npm i
+```
+and
+```bash
+npm run build
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contributing
 
-### Code Splitting
+If you would like to contribute to the project, make sure to open a pull request so code can be reviewed, or create an issue for the problem you are experiencing or a feature you would like to see added.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Contact
 
-### Analyzing the Bundle Size
+If you would like to contact me, feel free to do so via the following methods:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+[My LinkedIn page](https://www.linkedin.com/in/eric-pretzinger-0753551a4/)
 
-### Making a Progressive Web App
+Email: ericpretzinger@gmail.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Discord: `pretzL#0001`
 
-### Advanced Configuration
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This project is licensed under a Creative Commons license. It is open for contributions, but please credit the project if you use the code in your own projects.
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
